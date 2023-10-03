@@ -1,3 +1,18 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@screens": ["./src/screens"],
+      "@types/*": ["./src/types/*"],
+      "@types": ["./src/types"],
+      "@utils/*": ["./src/utils/*"],
+      "@themes": ["./src/themes"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./src/**/*"]
 }
