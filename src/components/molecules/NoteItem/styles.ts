@@ -4,9 +4,9 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     margin: 5,
     backgroundColor: Colors.white,
+    width: '47%',
   },
   title: {
     fontSize: fontScale(16),

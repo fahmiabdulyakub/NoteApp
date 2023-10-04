@@ -23,7 +23,6 @@ const ListNotes = () => {
         numColumns={2}
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}
-        columnWrapperStyle={styles.columnWrapper}
         keyExtractor={keyExtractor}
         showsVerticalScrollIndicator={false}
       />

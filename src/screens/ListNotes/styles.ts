@@ -27,9 +27,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(16),
     borderRadius: 100,
   },
-  columnWrapper: {
-    justifyContent: 'space-between',
-  },
 });
 
 export default styles;
