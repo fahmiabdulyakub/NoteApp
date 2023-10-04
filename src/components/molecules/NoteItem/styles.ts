@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 5,
-    alignItems: 'center',
     backgroundColor: Colors.white,
   },
   title: {
@@ -15,6 +14,7 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(5),
     fontFamily: Fonts.PoppinsMedium,
     color: Colors.black,
+    textAlign: 'center',
   },
   description: {
     fontSize: fontScale(14),
