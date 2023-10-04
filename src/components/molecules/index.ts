@@ -1,2 +1,3 @@
 import NoteItem from './NoteItem';
-export {NoteItem};
+import InputNote from './InputNote';
+export {NoteItem, InputNote};
