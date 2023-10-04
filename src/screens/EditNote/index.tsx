@@ -1,10 +1,25 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
+import useEditNote from './hooks/useEditNote';
+import {InputNote} from '@components/molecules';
+import styles from './styles';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {StackParams} from '@types';
 
-const EditNote = () => {
+export type Props = NativeStackScreenProps<StackParams, 'EditNote'>;
+
+const EditNote = (props: Props) => {
+  const {title, description, setTitle, setDescription, handleEditNote} =
+    useEditNote(props.route.params);
   return (
-    <View>
-      <Text>EditNote</Text>
+    <View style={styles.container}>
+      <InputNote
+        title={title}
+        description={description}
+        onChangeTitle={setTitle}
+        onChangeDescription={setDescription}
+        onSave={handleEditNote}
+      />
     </View>
   );
 };
