@@ -13,6 +13,8 @@ import {Colors} from '@themes';
 import {AddNote, EditNote, ListNotes, Login} from '@screens';
 import {StackParams} from '@types';
 import {navigationRef, replace} from '@utils/NavigationUtils';
+import {initializeEncryptionKey} from '@utils/EncryptionUtils';
+import 'react-native-get-random-values';
 
 const Stack = createNativeStackNavigator<StackParams>();
 
@@ -21,6 +23,7 @@ export const Routes = () => {
   const [lastActiveTime, setLastActiveTime] = useState<number | null>(null);
 
   useEffect(() => {
+    getKey();
     const subscription = AppState.addEventListener(
       'change',
       handleAppStateChange,
@@ -29,13 +32,17 @@ export const Routes = () => {
       subscription.remove();
     };
   }, []);
-  console.log('APPSTATE : ', appState);
+
+  const getKey = async () => {
+    await initializeEncryptionKey();
+  };
+
   const handleAppStateChange = useCallback(
     (nextAppState: AppStateStatus) => {
       if (appState === 'active' && nextAppState === 'background') {
         setLastActiveTime(Date.now());
       }
-      console.log(appState, nextAppState);
+
       if (appState === 'background' && nextAppState === 'active') {
         const currentTime = Date.now();
         if (lastActiveTime && currentTime - lastActiveTime >= 60000) {
