@@ -18,7 +18,7 @@ const useAddNote = () => {
         date: new Date(),
       };
       const existingNotes = await retrieveAndDecryptNotes();
-      const updatedNotes = [...(existingNotes || []), note];
+      const updatedNotes = [note, ...(existingNotes || [])];
       await encryptAndSaveNotes(updatedNotes);
       pop();
     } catch (error) {
