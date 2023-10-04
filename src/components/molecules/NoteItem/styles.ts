@@ -7,11 +7,12 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 5,
     alignItems: 'center',
+    backgroundColor: Colors.white,
   },
   title: {
     fontSize: fontScale(16),
     fontWeight: 'bold',
-    marginBottom: verticalScale(5),
+    marginTop: verticalScale(5),
     fontFamily: Fonts.PoppinsMedium,
     color: Colors.black,
   },
@@ -22,12 +23,19 @@ const styles = StyleSheet.create({
   },
   contenContainer: {
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: Colors.black,
+    backgroundColor: Colors.white,
     width: '100%',
     height: verticalScale(230),
     paddingHorizontal: horizontalScale(8),
     paddingVertical: verticalScale(8),
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
 });
 
