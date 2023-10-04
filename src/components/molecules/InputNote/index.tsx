@@ -26,7 +26,18 @@ const InputNote = (props: InputNotePropsType) => {
         placeholderTextColor={Colors.dark_grey}
         multiline
       />
-      <Button title="Save" style={styles.saveButton} onPress={onSave} />
+      <Button
+        disabled={!title && !description}
+        title="Save"
+        style={[
+          styles.saveButton,
+          {
+            backgroundColor:
+              !title && !description ? Colors.light_grey : Colors.blue,
+          },
+        ]}
+        onPress={onSave}
+      />
     </View>
   );
 };

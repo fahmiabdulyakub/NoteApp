@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   saveButton: {
-    backgroundColor: Colors.blue,
     borderRadius: 10,
     marginHorizontal: horizontalScale(16),
     marginVertical: verticalScale(16),
