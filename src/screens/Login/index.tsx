@@ -18,7 +18,7 @@ const Login = () => {
         <Input
           value={password}
           onChangeText={setPassword}
-          placeholder="Input Password"
+          placeholder="Input Password 123456"
           secureTextEntry
         />
         <Button
